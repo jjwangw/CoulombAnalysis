@@ -51,16 +51,11 @@ NN=$7
 fi
 echo -e "sourcefault=$sourcefault receiverfault=$receiverfault meridian=$meridian brecompute_stress=$brecompute_stress friction=$friction Skempton=$Skempton \n tectonic_stress_path=$tectonic_stress_path nchoiceOOP=$nchoiceOOP"
 echo "minstrike=$minstrike maxstrike=$maxstrike mindip=$mindip maxdip=$maxdip minrake=$minrake maxrake=$maxrake NN=$NN"
-#exit 1
-##########Modify parameters in this subsection#################
-#sourcefault=WenchuanSlipCaltech_formated.in
-#sourcefault=gCMTNodalPlane2_slipmodel.txt
 ##sourcefault=Hashimoto_slipmodel10.in
 ##receiverfault=sampling_grids.in
 ##friction=0.4
 ##Skempton=0.0
 #meridan is used for Gaussian projection. For the whole study region, it can be prescribed to be the middle of the longitude.
-#meridian=103 #deg
 ##meridian=104 #deg
 #when brecompute_stress=0, the stress changes keep the same for choosing different receiver fault. In this case, computing Coulomb stress
 #changes can be dramatically speeded because the stress changes are not needed to compute again. On the other hand, when brecompute_stress=1,
@@ -68,20 +63,6 @@ echo "minstrike=$minstrike maxstrike=$maxstrike mindip=$mindip maxdip=$maxdip mi
 #which Coulomb stress changes are calculated. Note that the variable 'brecompute_stress' should be set to be 1 for the first time to compute 
 #stress changes and then the stress changes can be used for computing Coulomb stress changes on other receiver fault planes when brecompute_stress=0
 ##brecompute_stress=1
-#nchoiceOOP=1 for the vertical strike-slip OOPs, nchoiceOOP=2 for the 3D OOPs, and
-#nchoiceOOP=3 for grid-searched OOPs within the given parameter space of the receiver faults.
-#nchoiceOOP=2 #16:44 Nov.6,2017
-#nchoiceOOP=3
-
-##if [  $nchoiceOOP -eq 3 ];then
-##minstrike=0
-##maxstrike=360
-##mindip=0
-##maxdip=90
-##minrake=-90
-##maxrake=-90
-##NN=72
-##fi
 #############################################################
 #note that here the strike angle, dip angle and rake angle of the receiver fault
 #are merely used to compute stress tensor through running the 'CoulombAnalysis' program with these dummy parameters.
@@ -92,14 +73,10 @@ strike_receiver=150
 dip_receiver=78
 rake_receiver=-13
 #earthquake_stress=./CFS_result/stress.out
-#commonpath_wjj=/Users/wjj/Documents/manuscripts/20170808earthquake/Figure2_CFS_inducedby_Jiuzhaigou_subplots/subplot_inputdata/
-#commonpath_wjj=/Users/wjj/Documents/manuscripts/comput_Geosci/
 commonpath=./CFS_result
 if [ ! -d $commonpath ];then
 mkdir $commonpath
 fi
-#depth_wjj=$1
-#earthquake_stress=${commonpath_wjj}${depth_wjj}km/stress_backup.out
 earthquake_stress=${commonpath}/stress_backup.out
 if [ $brecompute_stress -eq 1 ];then
 rm -rf ${earthquake_stress%stress*}coulomb.out
@@ -130,14 +107,6 @@ cp $tectonic_stress $tectonic_stress_path
 coulomb_path=coulomb.out
 rm -rf $coulomb_path
 #------------------
-#for testing
-##cat<<EOF>stress.out
-##1 2 3 4 5 6
-##EOF
-##cat <<EOF>tectonic_stress.in
-##0 0 0 0 0 0
-##EOF
-#------------------
 case $nchoiceOOP in
 1|2|3|4)
 cd ./scripts
@@ -153,7 +122,6 @@ rm -rf temp.txt temp1.txt coulomb.out stress.out
 ;;
 5)
 gfortran ./scripts/OOPCFFmax.f90  -o OOPCFFmax
-#cp ./scripts/OOPCFFmax ./
 echo "compiling OOPCFFmax is done!"
 ./OOPCFFmax $earthquake_stress_path $tectonic_stress_path $coulomb_path $minstrike $maxstrike $mindip $maxdip $minrake $maxrake $friction $Skempton $NN
  echo "lon(deg)   lat(deg)" > temp.txt
