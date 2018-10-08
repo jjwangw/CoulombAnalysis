@@ -6,12 +6,12 @@ offx=9
 offy=1.2
 delta=1m
 workdir=./CFS_map
-if [ -f $workdir ];then
+if [ ! -d $workdir ];then
 mkdir $workdir
 else
-#rm -rf $workdir/*
-cd ./$workdir
+rm -rf $workdir/*
 fi
+cd $workdir
 coulomb=../CFS_result/coulomb.out
 cptfile=CFS.cpt
 makecpt -Cno_green -T-2/2/0.1 > $cptfile
