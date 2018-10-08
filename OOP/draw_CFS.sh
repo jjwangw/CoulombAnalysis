@@ -1,18 +1,9 @@
 #!/bin/bash
 psfile=coulomb.ps
-#range=100/106/28/36
 range=102/106/30/34
-range=102/106/30/34
-#range=60.1/60.8/35.5/36
-#range=102/105/32/34
 projection=m4
-#projection=m18
 offx=7
 offy=1.5
-
-#projection=m2
-#offx=3
-#offy=0.9
 delta=1m
 workdir=./CFS_map
 bshut=0
@@ -33,7 +24,6 @@ else
 rm -rf $workdir/*
 fi
 cd $workdir
-pwd
 coulomb=../CFS_result/coulomb.out
 cptfile=CFS.cpt
 makecpt -Cno_green -T-2/2/0.1 > $cptfile
