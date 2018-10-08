@@ -16,8 +16,8 @@ if [ ! -d $workdir ];then
 mkdir $workdir
 else
 #rm -rf $workdir/*
-cd $workdir
 fi
+cd $workdir
 coulomb=../CFS_result/coulomb.out
 cptfile=CFS.cpt
 makecpt -Cno_green -T-2/2/0.1 > $cptfile
