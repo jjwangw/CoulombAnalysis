@@ -15,14 +15,13 @@ cd ../../profile
 #cp computeCFS ../../profile
 #cd ../../profile
 #
-####################delete slip models and results#######
-rm -rf ./CFS_result
-##########################################################
 source_fault=$1
 sampling_file=$2
 filefolder=./CFS_result
 if [ ! -d $filefolder ];then
 mkdir $filefolder
+else
+rm -rf $filefolder/*
 fi
 cp $sampling_file samplingpoints.in
 echo -e "\033[31m----processing ...---\033[0m"
