@@ -6,15 +6,6 @@ make clean
 cp CoulombStressAnalysis  ../../profile
 cd ../../profile
 #
-#cd ../computeCFS
-#make
-#make clean
-#
-#gfortran ../find_minmax_values/find_minmax_values.f90 -o ../find_minmax_values/find_minmax_values
-#cp ../find_minmax_values/find_minmax_values  ../../profile
-#cp computeCFS ../../profile
-#cd ../../profile
-#
 source_fault=$1
 sampling_file=$2
 filefolder=./CFS_result
