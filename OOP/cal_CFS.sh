@@ -33,4 +33,4 @@ cp  $source_fault  slipmodel.in
 ./CoulombStressAnalysis ${naltermode_receiver} ${strike_receiver} ${dip_receiver} ${rake_receiver} ${friction} ${Skempton} ${meridian}
 mv stress.out "${filefolder}"
 mv coulomb.out  "${filefolder}/coulomb.out"
-rm -rf slipmodel.in samplingpoints.in
+rm -rf slipmodel.in samplingpoints.in sampling_temp.txt
