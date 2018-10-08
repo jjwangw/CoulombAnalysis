@@ -15,7 +15,7 @@ bshut=0
 if [ ! -d $workdir ];then
 mkdir $workdir
 else
-#rm -rf $workdir/*
+rm -rf $workdir/*
 fi
 cd $workdir
 coulomb=../CFS_result/coulomb.out
