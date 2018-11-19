@@ -102,7 +102,7 @@ for i=1:totalN
 end
 fclose(fp);
 path=pwd;
-n=find(path,'/');
+n=find(path=='/');
 disp([mfilename,'.m: The sampling file was save in the following directory:']);
 disp([path(1:max(n)),outputfile(4:end)]);
 disp(sprintf('total sampling points: %d\ndlon=%8.1f km dlat=%8.1f km',totalN,deg2rad(ddlon)*6378,deg2rad(ddlat)*6378));
