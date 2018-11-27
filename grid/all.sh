@@ -68,5 +68,5 @@ else
 ./cal_CFS.sh $sourcefault $receiverfault  ${strike_receiver} ${dip_receiver} ${rake_receiver} ${friction} ${Skempton} ${meridian}
 fi
 rm -rf computeCFS CoulombStressAnalysis sampling_temp.txt
-./draw_CFS.sh
+./draw_CFS.sh $receiverfault
 
