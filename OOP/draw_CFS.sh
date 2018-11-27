@@ -1,7 +1,7 @@
 #!/bin/bash
 psfile=coulomb.ps
 gfortran ../CFSsrc/find_minmax_values/get_gmt_boundary.f90 -o get_gmt_boundary
-sed '1d' $1 > tempgrids.txt
+sed '1d' $2 > tempgrids.txt
 ./get_gmt_boundary tempgrids.txt >/dev/null
 range=`awk '{printf("%13.6f/%13.6f/%13.6f/%13.6f\n"),$1,$2,$3,$4}' gmtbounds.txt | \
 sed 's/ //g'`
