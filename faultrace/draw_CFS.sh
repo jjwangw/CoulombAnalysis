@@ -1,12 +1,6 @@
 #!/bin/bash
 psfile=coulomb.ps
-gfortran ../CFSsrc/find_minmax_values/get_gmt_boundary.f90 -o get_gmt_boundary
-sed '1d' $1 > tempgrids.txt
-./get_gmt_boundary tempgrids.txt >/dev/null
-range=`awk '{printf("%13.6f/%13.6f/%13.6f/%13.6f\n"),$1,$2,$3,$4}' gmtbounds.txt | \
-sed 's/ //g'`
-rm -rf tempgrids.txt gmtbounds.txt get_gmt_boundary
-#range=100/106/28/36
+range=100/106/28/36
 projection=m2
 offx=9
 offy=1.2
