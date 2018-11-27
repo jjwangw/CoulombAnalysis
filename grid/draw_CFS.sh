@@ -5,7 +5,7 @@ sed '1d' $1 > tempgrids.txt
 ./get_gmt_boundary tempgrids.txt >/dev/null
 range=`awk '{printf("%13.6f/%13.6f/%13.6f/%13.6f\n"),$1,$2,$3,$4}' gmtbounds.txt | \
 sed 's/ //g'`
-rm -rf tempgrids.txt gmtbounds.txt
+rm -rf tempgrids.txt gmtbounds.txt get_gmt_boundary
 #range=102/106/30/34
 projection=m4
 offx=7
