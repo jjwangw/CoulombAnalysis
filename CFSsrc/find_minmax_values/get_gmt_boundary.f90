@@ -1,7 +1,6 @@
 program get_gmt_boundary
 implicit none
 character*100 filename
-logical err
 real*8 lon,lat
 real*8 minlon,maxlon,minlat,maxlat
 integer*4 nargs
