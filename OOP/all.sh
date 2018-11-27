@@ -135,5 +135,5 @@ rm -rf computeCFS CoulombStressAnalysis OOPCFFmax
 if [ "${earthquake_stress%stress*}" != "./CFS_result/" ];then
 cp ${earthquake_stress%stress*}coulomb.out  ./CFS_result/
 fi
-./draw_CFS.sh $nchoiceOOP
+./draw_CFS.sh $nchoiceOOP $receiverfault
 
