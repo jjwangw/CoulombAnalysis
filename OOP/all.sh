@@ -100,7 +100,7 @@ earthquake_stress_path=stress.out
 #---------------------------------------------
 tectonic_stress_path=tectonic_stress.in
 if [ $tectonic_stress_path == $tectonic_stress ];then
-echo -e "\033[31mwarning: please set the filename of the regional stress field  other than 'tectonic_stress.in'.\033[0m"
+echo -e "\033[31mwarning(ignorable): please set the filename of the regional stress field  other than 'tectonic_stress.in'.\033[0m"
 fi
 #---------------------------------------------
 cp $tectonic_stress $tectonic_stress_path
