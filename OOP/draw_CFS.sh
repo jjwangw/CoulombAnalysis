@@ -14,7 +14,7 @@ delta=1m
 workdir=./CFS_map
 bshut=0
 #-----------------------------------------------------------------------------------#
-if [ $# != 1 ];then
+if [ $# != 2 ];then
 echo -e  "\033[31m USAGE: $0 nchoice\033[0m"
 echo -e "\033[31m nchoice=1,2,3. nchoice=1 for displaying CFS resolved on the vertical strike-slip OOPs;\033[31m"
 echo -e "\033[31m nchoice=2 for displaying CFS resolved on the 3D OOPs;\n nchoice=3 for displaying CFS resolved on constrained OOPs.\033[0m"
