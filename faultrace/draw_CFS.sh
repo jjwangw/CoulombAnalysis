@@ -1,7 +1,8 @@
 #!/bin/bash
 psfile=coulomb.ps
 range=102/106/30/34
-echo -e \033[31m"NOTE: in this case, ranges of geographic coordinates consistent with GMT should be predefined"\033[0m
+echo -e "\033[31mNOTE: the ranges of geographic coordinates consistent with GMT should be predefined 
+when drawing CFS for a fault trace.Here the range is like 102/106/30/34\033[0m."
 projection=m2
 offx=9
 offy=1.2
