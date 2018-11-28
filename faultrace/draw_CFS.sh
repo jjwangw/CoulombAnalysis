@@ -1,6 +1,7 @@
 #!/bin/bash
 psfile=coulomb.ps
-range=100/106/28/36
+range=102/106/30/34
+echo -e \033[31m"NOTE: in this case, ranges of geographic coordinates consistent with GMT should be predefined"\033[0m
 projection=m2
 offx=9
 offy=1.2
