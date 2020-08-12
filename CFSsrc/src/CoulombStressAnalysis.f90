@@ -3,8 +3,7 @@ program CoulombStressAnalysis
 !faulting in a half space. The key elements of this source code include: (1) computing stress tensor
 !using the Okada's dislocation model (Okada et al., 1992,BSSA); (2) performing tensor transformation to
 !transform stress tensor in fault coordinate system into local Cartesian coordinate system and (3) substituting
-!the transformed stress tensor into the Coulomb stress model (Xu et al., 2010, tectonophys.; Wang et al., 2014,JGR) 
-!to compute the static Coulomb stress change.
+!the transformed stress tensor into the Coulomb stress model to compute the static Coulomb stress change.
 !
 !coded on Sep. 25, 2014, AK
 !jjwang@sgg.whu.edu.cn
@@ -188,11 +187,6 @@ do i=1,Nsamplings
 !-------------------
 write(10,20000)samplingpoints(i,1),samplingpoints(i,2),xr(i),yr(i),xs(j),ys(j),deltax,deltay
 20000 format(1x,2f10.2,6f35.15)
-!-------------------
-!14:36 Oct.11,2015 to compare this source code with coulomb3.4.just for testing code
-!deltax=samplingpoints(i,1)-faults(j,1)
-!deltay=samplingpoints(i,2)-faults(j,2)
-!-------------------
 !transform coordinate of each sampling point into fault system corresponding to  each source fault 
 !whose x is along strike, y is perpendicular to x, z is upward and x-y-z are right-hand coordinate system;
 !its origin is (x0,y0) in a Guassian plane and the distance between this origin and its projection on the fault plane of the source fault
