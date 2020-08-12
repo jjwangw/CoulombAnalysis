@@ -76,16 +76,10 @@ for i=1:row
             coulombs=[coulombs;tempcoulomb];
         end
      end
-     disp('------before--------');
-      [strikes coulombs]
-     disp('--------------------');
      strikes=strikes(max(coulombs)==coulombs);
      if length(strikes)==1
          strikes=[strikes strikes];
      end
-     disp('----------strike angles of the 1D OOP-------');
-     [strikes(:)]'
-     disp('--------------------------------------------');
      strike1=strikes(1);
      dip1=dip;
      rake1=-90;
