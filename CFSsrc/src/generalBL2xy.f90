@@ -34,9 +34,6 @@ e2=0.006694384999588;
 elseif(nchoiceellipse==3) then !WGS-84 ellipsphere
 a=6378137.0
 e2=0.0066943799013
-!flat = 298.257222101;%test DenkinProjection.m May 26, 2012
-!f=1/flat;
-!e2=1-(1/(1+f))**2;
 else
 print *,'please choose the right ellipsphere'
 endif
