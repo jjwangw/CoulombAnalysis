@@ -1,13 +1,5 @@
 subroutine CFF(stress,strike,dip,rake,friction,skempton,shear_stress,normal_stress,coulomb_stress)
 !stress(6) is in a coordinate system of which x is northern, y is eastern and z is upward.
-!Coulomb failure function (CFF) is based on Xu et al.(2010) (or Wang et al., 2014) formulae.
-!
-!Xu, C., J. Wang, Z. Li, and J. Drummond (2010), Applying the Coulomb failure function with 
-!an optimally oriented plane to the 2008 Mw 7.9 Wenchuan earthquake triggering, Tectonophys.,
-!491(1-4), 119-126, doi:10.1016/j.tecto.2009.09.019.
-!Wang, J., C. Xu, J. T. Freymueller, Z. Li, and W. Shen (2014), Sensitivity of Coulomb stress change 
-!to the parameters of the Coulomb failure model: A case study using the 2008 Mw 7.9 Wenchuan earthquake,
-! J. Geophys. Res.Solid Earth, 119, doi:10.1002/2012JB009860.
 !
 implicit none
 !
