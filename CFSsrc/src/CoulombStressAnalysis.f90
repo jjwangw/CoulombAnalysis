@@ -119,10 +119,6 @@ close(11)
 print *,'----Gauss projection of reference points of source faults and sampling points----'
 !meridian=temp/(Nfaults+Nsamplings)
 meridian=temp/Nsamplings
-!Aug.4,2016. fixed meridan?
-!meridian=95.8872
-!I found that resulted CFS is quite different using different value of meridian.
-!The best way would be to predefine a constant meridian for gaussian projection during the entire computing process.
 !
 call getarg(7,arg)
 read(arg,*)meridian
@@ -206,15 +202,6 @@ width=faults(j,5)
 !then ks0=length/2,eta0=width/2; if the upper left corner of the rectangluar fault plane, then ks0=0,eta0=width.
 !more details on this can be found on the site:http://www.bosai.go.jp/study/application/dc3d/DC3Dhtml_E.html. The subroutine 
 !DC3D.f is downloaded from this site.
-!ksi0=0.0
-!eta0=0.0
-!now the reference point is the center of upper edge of fault plane
-!ksi0=length*0.5
-!eta0=width
-!AL1=-ksi0
-!AL2=length-ksi0
-!AW1=-eta0
-!AW2=width-eta0
 !
 AL1=faults(j,6)
 AL2=faults(j,7)
@@ -224,22 +211,6 @@ AW2=faults(j,9)
 strike_slip=faults(j,12)
 dip_slip=faults(j,13)
 tensile_slip=faults(j,14)
-!-------------------------------------
-!just for testing DC3D.Oct.11,2015.see http://www.bosai.go.jp/study/application/dc3d/download/DC3Dmanual.pdf
-!alpha=2.0/3.0
-!x=10.0
-!y=20.0
-!z=-30.0
-!depth=50.0
-!dip=70.0
-!AL1=-80.0
-!AL2=120.0
-!AW1=-30.0
-!AW2=25.0
-!strike_slip=200.0
-!dip_slip=-150.0
-!tensile_slip=100.0
-!-------------------------------------
 call DC3D(alpha,x,y,z,depth,dip, &
                    AL1,AL2,AW1,AW2,&
                    strike_slip,dip_slip,tensile_slip,&
