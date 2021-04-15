@@ -1,11 +1,11 @@
-! %********************************************%
-! %name:generalxy2BL
-! %function:tranform Gaussian coordinates into geographical coordinates
-! %(x,y):Gaussian coordinates
-! %sL0:Meridian which has been used for projecting point cooresponding to  (x,y)
-! %in Gaussian plane.
-! %nchoiceellipse:reference ellisphere.1.Krassovsky;2.1975 international ellipsphere
-! %3.WGS-84.
+! ********************************************%
+! name:generalxy2BL
+! function:tranform Gaussian coordinates into geographical coordinates
+! (x,y):Gaussian coordinates
+! sL0:Meridian which has been used for projecting point cooresponding to  (x,y)
+! in Gaussian plane.
+! nchoiceellipse:reference ellisphere.1.Krassovsky;2.1975 international ellipsphere
+! 3.WGS-84.
 subroutine generalxy2BL(x,y,sL0,nchoiceellipse,sB,sL)
  implicit none
  real*8 x,y,sL0,sB,sL
