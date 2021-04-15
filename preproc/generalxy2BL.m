@@ -1,22 +1,4 @@
-% %********************************************%
-% %name:generalxy2BL
-% %function:tranform Gaussian coordinates into geographical coordinates
-% %(x,y):Gaussian coordinates
-% %sL0:Meridian which has been used for projecting point coorespondent to that (x,y)
-% %in Gaussian plane.
-% %nchoiceellip:reference ellisphere.1.Krassovsky;2.1975 international ellipsphere
-% %3.WGS-84.
 function [sB sL]=generalxy2BL(x,y,sL0,nchoiceellip)
-% real*8 x,y,sL0,sB,sL
-% integer*2 nchoiceellip
-% real*8 a,e2,m0,m2,m4,m6,m8
-% real*8 a0,a2,a4,a6,a8
-% real*8 beta,Bf,sMf,sNf,t,seta,seconde2
-% real*8 p2,p4,p6
-% real*8 q2,q4,q6
-% real*8 pi,ratio,ssl
-%
-%pi=acos(-1.0);
 ratio=180.0/pi;
 %
 if  nchoiceellip==1%then %Krassovsky ellipsphere
