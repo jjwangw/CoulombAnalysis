@@ -1,28 +1,4 @@
-% !********************************************!
-% !general Gaussian projection
-% !name:generalGaussproj
-% !function:project point (B,L) into plane such as Gaussian plane (x,y)
-% !sB:latitude
-% !sL:longitude
-% !sL0:Meridian
-% !nchoiceellip:choose paramters of ellipshpere.1.Krassovsky;2.1975 international ellipsphere
-% !3.WGS-84.
-% !nchoiceplane:1.Gaussian plane;2.UTM
 function [x y]=generalGaussproj(sB,sL,sL0,nchoiceellip,nchoiceplane)
-% real*8 sB,sL,sL0,x,y
-% integer*2 nchoiceellip,nchoiceplane
-% real*8 a,e2,m0,m2,m4,m6,m8
-% real*8     a0,a2,a4,a6,a8
-% real*8  arclength
-% real*8 sN,t,seta
-% real*8 scale
-% real*8 seconde2,B,newsL,newsL0,pi,ratio,diffl
-% !
-% pi=acos(-1.0);
-% ratio=pi/180;
-% B=sB*ratio;
-% newsL=sL*ratio;
-% newsL0=sL0*ratio;
 B=deg2rad(sB);
 newsL=deg2rad(sL);
 newsL0=deg2rad(sL0);
