@@ -2,8 +2,6 @@ function preproc_sampling_profile()
 clc;clear;close all;
 %-------------------------------------------------------------------------%
 path_receiver_fault=input('profile plane with the same format as a single source fault: ','s');
-%path_receiver_fault='~/Mexico_profile_plane.txt';
-%path_aftershocks='~/mainshockss.txt';
 MM=700;
 NN=200;
 %MM=400;
