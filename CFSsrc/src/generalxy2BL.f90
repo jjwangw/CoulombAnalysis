@@ -1,4 +1,4 @@
-! ********************************************%
+! ********************************************
 ! name:generalxy2BL
 ! function:tranform Gaussian coordinates into geographical coordinates
 ! (x,y):Gaussian coordinates
@@ -45,7 +45,7 @@ a4=m4/8+3*m6/16+7*m8/32
 a6=m6/32+m8/16
 a8=m8/128
 !
-beta=x/a0;
+beta=x/a0
 p2=-a2/(2*a0)
 p4=a4/(4*a0)
 p6=-a6/(6*a0)
@@ -67,4 +67,4 @@ ssl=y/(sNf*cos(Bf)) -(1+2*t**2+seta**2)*(y**3)/( 6*cos(Bf)*(sNf**3) ) + &
   ( 5+28*t**2+24*t**4+6*seta**2+8*(seta**2)*(t**2) )*(y**5)/(120*(sNf**5)*cos(Bf) )
 sL=sL0+ssl*ratio
 end
-!******************************************%
+!******************************************
