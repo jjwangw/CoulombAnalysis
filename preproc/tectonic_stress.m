@@ -45,26 +45,3 @@ s23=1/2*(s1*sin(2*P1)*sin(T1)+s2*sin(2*P2)*sin(T2)+s3*sin(2*P3)*sin(T3));
 s33=s1*sin(P1)^2+s2*sin(P2)^2+s3*sin(P3)^2;
 %
 s=[s11 s12 s13;s12 s22 s23;s13 s23 s33];%my coordinate. x is northern, y is eastern and z is upward.
-%s=[s22 s12 s23;s12 s11 s13;s23 s13 s33];%Toda's coordinate. x is eastern, y is northern and z is upward.
-
-
-function derive_tectonic_stress()
-syms P1 T1 P2 T2 P3 T3;
-syms s1 s2 s3;
-%P1 is the plunge angle of the principal stress s1. T1 is its azimuth.
-%P2 is the plunge angle of the principal stress s2. T2 is its azimuth.
-%P3 is the plunge angle of the principal stress s3. T3 is its azimuth.
-%note x is north, y is east and z is upward.
-D=[cos(P1)*cos(T1) cos(P2)*cos(T2) cos(P3)*cos(T3);...
-   cos(P1)*sin(T1) cos(P2)*sin(T2) cos(P3)*sin(T3);...
-   sin(P1)         sin(P2)         sin(P3)]; 
-stress=D*diag([s1,s2,s3])*transpose(D);
-s11=s1*cos(P1)^2*cos(T1)^2+s2*cos(P2)^2*cos(T2)^2+s3*cos(P3)^2*cos(T3)^2;
-s12=1/2*(s1*cos(P1)^2*sin(2*T1)+s2*cos(P2)^2*sin(2*T2)+s3*cos(P3)^2*sin(2*T3));
-s13=1/2*(s1*sin(2*P1)*cos(T1)+s2*sin(2*P2)*cos(T2)+s3*sin(2*P3)*cos(T3));
-s22=s1*cos(P1)^2*sin(T1)^2+s2*cos(P2)^2*sin(T2)^2+s3*cos(P3)^2*sin(T3)^2;
-s23=1/2*(s1*sin(2*P1)*sin(T1)+s2*sin(2*P2)*sin(T2)+s3*sin(2*P3)*sin(T3));
-s33=s1*sin(P1)^2+s2*sin(P2)^2+s3*sin(P3)^2;
-%
-check_tectonic_stress=simple(stress-[s11 s12 s13;s12 s22 s23;s13 s23 s33]);
-check_tectonic_stress
