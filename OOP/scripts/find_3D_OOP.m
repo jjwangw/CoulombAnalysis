@@ -39,7 +39,6 @@ for i=1:row
      s1=[sin(alpha);0;-cos(alpha)];
      %
      n2=[cos(alpha);0;-sin(alpha)];
-     %s2=[-sin(alpha);0;-cos(alpha)];%bug
      s2=[sin(alpha);0;cos(alpha)];
      %
      new_n1=P*n1;
