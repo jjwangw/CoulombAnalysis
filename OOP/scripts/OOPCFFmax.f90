@@ -159,8 +159,14 @@ optCFFvalue=-1.0e+10
                 optRake=rake
                 optCFFvalue=CFFvalue
             endif
-        enddo
-    enddo
+            if(abs(delta_rake).le.1.0d-6)then
+                exit
+            endif 
+        enddo !end of rake loop
+      if(abs(delta_dip).le.1.0d-6)then
+       exit
+      endif
+    enddo !end of dip loop
     write(*,1000)strike
     1000 format(1x,'strike=',f8.3,1x,'deg')
   enddo
