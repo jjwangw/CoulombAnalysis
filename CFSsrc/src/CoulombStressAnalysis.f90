@@ -173,7 +173,6 @@ read(arg,*)Skempton
 write(*,*)Skempton
 !
 print *,'processing...'
-open(unit=10,file='sampling_temp.txt')
 do i=1,Nsamplings
  call InitializeStress(sum_stress)
  do j=1,Nfaults
@@ -181,8 +180,6 @@ do i=1,Nsamplings
  deltay=( yr(i)-ys(j) )*1.0d-3 !deltay=y-y0. (x0,y0) is the coordinate of reference point of each source fault
                                        ! in the same Guassian plane.
 !-------------------
-write(10,20000)samplingpoints(i,1),samplingpoints(i,2),xr(i),yr(i),xs(j),ys(j),deltax,deltay
-20000 format(1x,2f10.2,6f35.15)
 !transform coordinate of each sampling point into fault system corresponding to  each source fault 
 !whose x is along strike, y is perpendicular to x, z is upward and x-y-z are right-hand coordinate system;
 !its origin is (x0,y0) in a Guassian plane and the distance between this origin and its projection on the fault plane of the source fault
@@ -249,7 +246,6 @@ enddo !end of loop for sampling points i
 !close outputfile
 close(12)
 close(13)
-close(10)
 !free memory
 deallocate(faults)
 deallocate(samplingpoints)
