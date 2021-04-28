@@ -93,7 +93,7 @@ do j=i+1,3
 !  call two_vector_dot_product(A,B,N,C)
  ! write(*,*)'C=',C
  if(abs(C).gt.1.0e-6)then
-  write(*,*)'***error: at least two principal axes are not perpendicular to each other!'
+  write(*,*)'***error: at least two principal axes are not orthogonal to each other!'
   return
  endif
 enddo
