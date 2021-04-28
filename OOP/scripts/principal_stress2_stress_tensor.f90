@@ -11,7 +11,7 @@ character*100 arg
 integer*4 nargc,i,j,N
 real*8 e11,e12,e13,e22,e23,e33
 !
-!coded on 22:39 Aug.7,2016 wjj
+!coded on 22:39 Aug.7th,2016 jjwang
 !
 nargc=iargc()
 if(nargc.ne.9)then
@@ -73,9 +73,9 @@ s(1,2)=cos(P2)*cos(T2)
 s(2,2)=cos(P2)*sin(T2)
 s(3,3)=sin(P2)
 !
-s(1,1)=cos(P3)*cos(T3)
-s(2,1)=cos(P3)*sin(T3)
-s(3,1)=sin(P3)
+s(1,3)=cos(P3)*cos(T3)
+s(2,3)=cos(P3)*sin(T3)
+s(3,3)=sin(P3)
 !write(*,*)P1,P2,P3,T1,T2,T3
 !
 !write(*,*)((s(i,j),i=1,3),j=1,3)
@@ -92,7 +92,7 @@ do j=i+1,3
     C=A(1)*B(1)+A(2)*B(2)+A(3)*B(3)
 !  call two_vector_dot_product(A,B,N,C)
  ! write(*,*)'C=',C
- if(abs(C).gt.1.0e-3)then
+ if(abs(C).gt.1.0e-6)then
   write(*,*)'***error: at least two principal axes are not perpendicular to each other!'
   return
  endif
